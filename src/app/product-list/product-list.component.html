@@ -6,6 +6,7 @@
     {{ product.name }}
   </a>
 </h3>
+
 <p *ngIf="product.description">
   Description: {{ product.description }}
 </p>
@@ -14,6 +15,10 @@
   Share
 </button>
 
-<app-product-alerts [product]="product"></app-product-alerts>
+<app-product-alerts
+[product]="product"
+ (notify)="onNotify()">
+></app-product-alerts>
+<!-- This doesn't work. Don't know why. Link: https://angular.io/start#pass-data-to-a-child-component -->
 
 </div>
